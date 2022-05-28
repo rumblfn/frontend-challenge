@@ -12,7 +12,7 @@ export const Header:FC = () => {
                 <nav className="navbar">
                     <NavLink to="/all" 
                         className={
-                            splitLocation[1] === "all" || splitLocation[1] === "" ? 
+                            splitLocation[1] === "all" || splitLocation[1] === "" || splitLocation[1] === "frontend-challenge" ? 
                             "header-link-active" 
                             : "header-link"
                     }>

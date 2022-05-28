@@ -10,7 +10,7 @@ const limit = 30;
 
 export const AllCats:FC = () => {
     const {fetchCats} = useActions();
-    const {cats, error, loading, page} = useTypedSelector<CatsState>(state => state.cats);
+    const {cats, loading, page} = useTypedSelector<CatsState>(state => state.cats);
 
     const handleScroll = (e: any) => {
         if (window.innerHeight + e.target.documentElement.scrollTop + 1 >= 
