@@ -1,0 +1,27 @@
+.catCard-img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.catCard {
+    position: relative;
+}
+
+.heart {
+    position: absolute;
+    right: 28px;
+    bottom: 28px;
+    opacity: 0;
+}
+
+.catCard:hover .heart {
+    opacity: 1;
+}
+
+.heart-img {
+    cursor: pointer;
+}
