@@ -5,6 +5,11 @@
     margin-bottom: 64px;
 }
 
+.all-cats-loading-msg {
+    text-align: center;
+    margin-bottom: 31px;
+}
+
 @media (max-width: 1316px) {
     .cats-box {
         display: grid;

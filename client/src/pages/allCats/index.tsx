@@ -33,6 +33,9 @@ export const AllCats:FC = () => {
             <div className="cats-box">{
                 cats.map(item => <CatCard key={`${item.id}-${nanoid(8)}`} id={item.id} url={item.url} />)
             }</div>
+            <div className="all-cats-loading-msg">
+                {loading ? "... загружаем еще котиков ..." : null}
+            </div>
         </div>
     )
 }
