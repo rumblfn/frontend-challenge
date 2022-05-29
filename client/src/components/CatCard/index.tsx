@@ -12,7 +12,7 @@ interface CatCardProps {
 }
 
 export const CatCard:FC<CatCardProps> = ({url, id}) => {
-    const liked = useTypedSelector(state => state.cats.favouriteCats[id])
+    const liked = useTypedSelector(state => state.favCats.favouriteCats[id])
     const {likeCat, delCatFromFavs} = useActions();
     const [heartHover, setHeartHover] = useState<boolean>(false)
 

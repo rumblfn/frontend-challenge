@@ -1,5 +1,6 @@
+import { FavCatsActionTypes } from './../../types/cats';
 import { Dispatch } from 'redux';
-import { CatsAction } from '../../types/cats';
+import { CatsAction, FavCatsAction } from '../../types/cats';
 import { CatsActionTypes } from '../../types/cats';
 import { oneCat } from '../../types/cats';
 
@@ -34,10 +35,10 @@ export const fetchCats = (page: number, limit: number) => {
 }
 
 export const likeCat = (catId: string, catUrl: string) => {
-    return async (dispatch: Dispatch<CatsAction>) => {
+    return async (dispatch: Dispatch<FavCatsAction>) => {
         try {
             dispatch({
-                type: CatsActionTypes.LIKE_CAT,
+                type: FavCatsActionTypes.LIKE_CAT,
                 payload: {
                     id: catId,
                     url: catUrl
@@ -50,10 +51,10 @@ export const likeCat = (catId: string, catUrl: string) => {
 }
 
 export const delCatFromFavs = (catId: string) => {
-    return async (dispatch: Dispatch<CatsAction>) => {
+    return async (dispatch: Dispatch<FavCatsAction>) => {
         try {
             dispatch({
-                type: CatsActionTypes.DEL_CAT_FROM_FAVS,
+                type: FavCatsActionTypes.DEL_CAT_FROM_FAVS,
                 payload: catId
             })
         } catch (e) {

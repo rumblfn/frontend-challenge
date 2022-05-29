@@ -4,7 +4,7 @@ import { CatCard } from "../../components/CatCard";
 import '../style.css';
 
 export const FavouriteCats:FC = () => {
-    const fav_cats = useTypedSelector<any>(state => state.cats.favouriteCats);
+    const fav_cats = useTypedSelector<any>(state => state.favCats.favouriteCats);
 
     return (
         <div className="container">

@@ -1,7 +1,6 @@
 import { CatsAction, CatsState, CatsActionTypes } from './../../types/cats';
 
 const initialState: CatsState = {
-    favouriteCats: {},
     cats: [],
     loading: false,
     error: null,
@@ -29,23 +28,6 @@ export const catsReducer = (state = initialState, action: CatsAction): CatsState
                 ...state,
                 loading: true,
                 error: action.payload
-            }
-        case CatsActionTypes.LIKE_CAT:
-            return {
-                ...state,
-                favouriteCats: {
-                    ...state.favouriteCats,
-                    [action.payload.id]: action.payload.url
-                }
-            }
-        case CatsActionTypes.DEL_CAT_FROM_FAVS:
-            const fav_cats: any = {...state.favouriteCats}
-            delete fav_cats[action.payload]
-            return {
-                ...state,
-                favouriteCats: {
-                    ...fav_cats
-                }
             }
         default:
             return state;

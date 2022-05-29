@@ -7,16 +7,22 @@ export enum CatsActionTypes {
     FETCH_CATS = "FETCH_USER",
     FETCH_CATS_SUCCESS = "FETCH_USER_SUCCESS",
     FETCH_CATS_ERROR = "FETCH_USER_ERROR",
+}
+
+export enum FavCatsActionTypes {
     LIKE_CAT = "LIKE_CAT",
     DEL_CAT_FROM_FAVS = "DEL_CAT_FROM_FAVS"
 }
 
 export interface CatsState {
-    favouriteCats: {};
     cats: oneCat[];
     loading: boolean;
     error: null | string;
     page: number;
+}
+
+export interface FavCatsState {
+    favouriteCats: any;
 }
 
 interface FetchCatsAction {
@@ -37,13 +43,14 @@ interface FetchCatsErrorAction {
 }
 
 interface LikeCatAction {
-    type: CatsActionTypes.LIKE_CAT;
+    type: FavCatsActionTypes.LIKE_CAT;
     payload: oneCat;
 }
 
 interface DelCatAction {
-    type: CatsActionTypes.DEL_CAT_FROM_FAVS;
+    type: FavCatsActionTypes.DEL_CAT_FROM_FAVS;
     payload: string;
 }
 
-export type CatsAction = FetchCatsAction | FetchCatsSuccessAction | FetchCatsErrorAction | LikeCatAction | DelCatAction;
+export type CatsAction = FetchCatsAction | FetchCatsSuccessAction | FetchCatsErrorAction;
+export type FavCatsAction = LikeCatAction | DelCatAction;
